@@ -1,0 +1,13 @@
+!!! 5
+%html{html_attrs('en-US')}
+  = render :partial => 'layouts/head'
+  %body{ :class => page_class }
+    = render :partial => 'layouts/flashes'
+    #container
+      %header#header
+      #content
+        = yield
+      %footer#footer
+        = render :partial => 'layouts/footer'
+    = include_javascripts :workspace
+    
