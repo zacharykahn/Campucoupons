@@ -1,0 +1,8 @@
+javascripts:
+  workspace:
+    - public/javascripts/jquery.min.js
+    - public/javascripts/jquery-ui.min.js
+    - public/javascripts/jquery.jgrowl.js
+    - public/javascripts/rails.js
+    - public/javascripts/application.js
+    - public/javascripts/**/*.js

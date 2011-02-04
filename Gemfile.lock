@@ -288,6 +288,7 @@ GEM
       sqlite3 (>= 1.3.3)
     stackdeck (0.2.0)
     term-ansicolor (1.0.5)
+    therubyracer (0.8.0)
     thor (0.14.6)
     tilt (1.2.2)
     treetop (1.4.9)
@@ -338,5 +339,6 @@ DEPENDENCIES
   simple_form
   spork (>= 0.8.4)
   sqlite3-ruby
+  therubyracer
   validated_simple_form!
   will_paginate (>= 3.0.pre2)

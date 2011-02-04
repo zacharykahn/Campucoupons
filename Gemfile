@@ -14,6 +14,7 @@ gem "validated_simple_form", :git => "git://github.com/pederbl/validated_simple_
 gem "friendly_id", "~>3.0"
 gem "compass", ">= 0.10.5"
 gem "lemonade", "0.3.4"
+gem "therubyracer"
 gem "barista", ">= 0.5.0"
 gem "inploy", ">=1.6.8"
 gem "jammit"
