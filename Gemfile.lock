@@ -72,6 +72,7 @@ GEM
       capybara (~> 0.4.0)
       envjs (>= 0.3.7)
     celerity (0.8.7)
+    cgi_multipart_eof_fix (2.5.0)
     childprocess (0.1.6)
       ffi (~> 0.6.3)
     chronic (0.2.3)
@@ -102,6 +103,7 @@ GEM
     cucumber-rails (0.3.2)
       cucumber (>= 0.8.0)
     culerity (0.2.15)
+    daemons (1.1.0)
     database_cleaner (0.6.1)
     devise (1.1.5)
       bcrypt-ruby (~> 2.1.2)
@@ -120,6 +122,7 @@ GEM
     factory_girl_rails (1.0.1)
       factory_girl (~> 1.3)
       railties (>= 3.0.0)
+    fastthread (1.0.7)
     fattr (2.2.0)
     ffi (0.6.3)
       rake (>= 0.8.7)
@@ -131,6 +134,7 @@ GEM
       sexp_processor (~> 3.0)
     friendly_id (3.2.1)
       babosa (~> 0.2.1)
+    gem_plugin (0.2.3)
     gherkin (2.3.3)
       json (~> 1.4.6)
     haml (3.0.25)
@@ -185,7 +189,13 @@ GEM
       reek (>= 1.2.6)
       roodi (>= 2.1.0)
     mime-types (1.16)
+    mongrel (1.1.5)
+      cgi_multipart_eof_fix (>= 2.4)
+      daemons (>= 1.0.3)
+      fastthread (>= 1.0.1)
+      gem_plugin (>= 0.2.3)
     nokogiri (1.4.4)
+    pg (0.10.1)
     pickle (0.4.4)
       cucumber (>= 0.8)
       rake
@@ -283,9 +293,6 @@ GEM
       rack (~> 1.1)
       tilt (~> 1.2)
     spork (0.8.4)
-    sqlite3 (1.3.3)
-    sqlite3-ruby (1.3.3)
-      sqlite3 (>= 1.3.3)
     stackdeck (0.2.0)
     term-ansicolor (1.0.5)
     therubyracer (0.8.0)
@@ -326,6 +333,8 @@ DEPENDENCIES
   jammit
   lemonade (= 0.3.4)
   metric_fu (>= 1.5.1)
+  mongrel
+  pg
   pickle (>= 0.4.2)
   rails (= 3.0.3)
   rails3-generators!
@@ -338,7 +347,6 @@ DEPENDENCIES
   ruby-debug19
   simple_form
   spork (>= 0.8.4)
-  sqlite3-ruby
   therubyracer
   validated_simple_form!
   will_paginate (>= 3.0.pre2)

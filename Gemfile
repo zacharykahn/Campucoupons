@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
-
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem "mongrel"
+gem "pg"
 
 gem "haml-rails", ">= 0.2"
 gem "inherited_resources", ">=1.1.2"

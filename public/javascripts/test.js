@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 04 Feb 2011 05:22:24 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 10 Feb 2011 12:28:38 GMT from
  * /home/denis/projects/campuscoupons/app/coffeescripts/test.coffee
  */
 
