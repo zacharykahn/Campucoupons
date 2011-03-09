@@ -17,7 +17,6 @@ gem "compass", :git => "git://github.com/liquidautumn/compass.git"
 gem "lemonade"
 gem "therubyracer"
 gem "barista", ">= 0.5.0"
-gem "inploy", ">=1.6.8"
 gem "jammit"
 
 group :development do
