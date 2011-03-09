@@ -2,5 +2,5 @@
 = simple_form_for resource, :as => resource_name, :url => registration_path(resource_name) do |form|
   = devise_error_messages!
   = render :partial => 'users/form', :object => form
-  = f.submit "Sign up"
+  = form.submit "Sign up"
 = render :partial => "devise/shared/links"
