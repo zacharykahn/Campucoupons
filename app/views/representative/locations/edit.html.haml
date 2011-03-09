@@ -1,0 +1,5 @@
+%h1 Edit location
+= simple_form_for resource, :url => representative_location_path(resource) do |form|
+  = error_messages!
+  = render :partial => 'locations/form', :object => form
+  = form.submit "Done"

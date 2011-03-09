@@ -1,11 +1,35 @@
 Campuscoupons::Application.routes.draw do
   devise_for :users
 
-  resources :businesses
+  resource :account do
+    get :password, :on => :member
+  end
+
+  namespace 'customer' do
+    resources :deals
+  end
+
+  namespace 'representative' do
+    resources :deals
+    resources :locations
+    resource :business do
+      resources :locations
+    end
+  end
+
+  resources :businesses do
+    resources :locations
+  end
+
+  resources :cities do
+    get :choose, :on => :member
+  end
 
   resources :deals do
     resources :coupons
   end
+
+  resources :coupons
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

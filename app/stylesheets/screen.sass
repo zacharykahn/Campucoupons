@@ -1,0 +1,234 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import blueprint/reset
+
+// To configure blueprint, edit the partials/base.sass file.
+@import partials/base
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import blueprint
+
+// Import the non-default scaffolding module.
+@import blueprint/scaffolding
+
+@import compass/css3/border-radius
+@import compass/layout/sticky-footer
+@import compass/utilities/general/clearfix
+
+@import partials/jgrowl
+@import partials/form
+
+// To generate css equivalent to the blueprint css but with your
+// configuration applied, uncomment:
+// @include blueprint
+
+// But Compass recommends that you scope your blueprint styles
+// So that you can better control what pages use blueprint
+// when stylesheets are concatenated together.
+//+blueprint-scaffolding("body")
+
++sticky-footer(30px)
+
+a
+  text-decoration: none !important
+  color: #243654
+
+a.blue-button
+  display: inline-block
+  background-color: white
+  background-repeat: repeat-x
+  background-position: left bottom
+  background-image: url(/images/gradients/blue_to_darker_vertical_55.png)
+  font-weight: bold
+  padding: 7px 25px 7px 25px
+  color: white !important
+  +border-radius
+
+body
+  +blueprint-typography(true)
+  +blueprint-utilities
+  +blueprint-debug
+  +blueprint-interaction
+
+ul, ul li
+  list-style-type: none
+
+body
+  +blueprint-utilities
+  +blueprint-debug
+  +blueprint-interaction
+  #flash
+    .notice, .alert
+      display: none
+  #container
+    +container
+    +showgrid
+    padding-top: 35px
+  #footer
+    text-align: center !important
+    padding-top: 10px
+    small, ul, li
+      display: inline
+      font-size: 1em
+    ul li
+      border-right: solid #6e6e6e 1px
+      padding-right: 7px
+      padding-left: 3px
+  #content
+    +column(24, true)
+
+#header
+  width: 100%
+  color: white
+  background-color: black
+  background-image: url(/images/gradients/blue_to_darker_vertical_55.png)
+  border-bottom: solid #e8e8e8 1px
+  overflow: hidden
+  height: 55px
+  a
+    color: white
+  .logo
+    position: absolute
+    width: 100px
+    font-size: 1.75em
+    top: 10px
+    left: 20px
+    a
+      color: #e5e7eb
+  .city
+    position: absolute
+    width: 130px
+    top: 16px
+    left: 180px
+    a
+      display: block
+      width: 130px
+      padding: 2px 0 3px 15px
+      color: silver
+      &:hover
+        background-color: #202f4a
+  .account.menu
+    position: absolute
+    width: 120px
+    font-size: 1.1em
+    top: 13px
+    right: 20px
+    +clearfix
+    li
+      float: left
+      text-align: center
+    a
+      display: block
+      width: 55px
+      padding: 3px 0 3px 0
+      color: silver
+      &:hover
+        background-color: #202f4a
+
+.jGrowl-notification
+  h2
+    display: none
+
+.buttons
+  margin: 15px 0 25px 0
+
+.container
+  +container
+
+.left-column
+  +column(16)
+
+.right-column
+  +column(8, last)
+
+//Account shared
+.account_menu
+  +blueprint-reset-box-model
+  +column(24, last)
+  clear: both
+  overflow: hidden
+  padding-top: 27px
+  margin-bottom: 25px
+  border-bottom: solid #243654 1px
+  li
+    display: block
+    float: left
+    margin: 0 4px 0 0
+    a
+      display: block
+      background-color: white
+      background-repeat: repeat-x
+      background-position: left bottom
+      background-image: url(/images/gradients/white_to_gray_vertical_40.png)
+      font-weight: bold
+      padding: 10px 30px 10px 30px
+      color: #243654
+      border: solid #243654 1px
+      border-bottom: none
+      +border-top-radius
+    a.current
+      color: white
+      background-color: white
+      background-repeat: repeat-x
+      background-position: left bottom
+      background-image: url(/images/gradients/blue_to_darker_vertical_55.png)
+  li.right
+    float: right
+    margin: 0 0 0 4px
+
+ul.list
+  padding: 0
+  .empty_content
+    background-color: #aa5c00
+    color: white
+    font-size: 1.25em
+    padding: 15px 25px 15px 15px
+    +border-radius
+    p
+      margin: 0 0 5px 0
+    a
+      color: #cacaca
+      text-decoration: underline !important
+  .item
+    +clearfix
+    position: relative
+    margin-bottom: 15px
+    font-size: 1.2em
+    header
+      font-size: 1.2em
+      font-weight: bold
+      margin-bottom: 4px
+    div
+      line-height: 1.1em
+  .menu
+    position: absolute
+    bottom: 3px
+    right: 10px
+    font-size: .8em
+    a
+      text-decoration: underline !important
+      color: #243654
+    li
+      display: inline
+      padding-left: 4px
+
+.list.locations
+  .item
+    +span(8)
+  .map
+    +column(3)
+    div
+      border: solid #8a8a8a 1px
+      width: 102px
+      height: 102px
+    img
+      margin: 1px
+  .details
+    +column(5, true)
+
+.list.deals
+  .item
+    +span(15)
+  .image
+    +column(4)
+  .details
+    +column(11, true)

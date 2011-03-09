@@ -1,10 +1,9 @@
-= form_for @deal do |f|
-  -if @deal.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@deal.errors.count, "error")} prohibited this deal from being saved:"
-      %ul
-        - @deal.errors.full_messages.each do |msg|
-          %li= msg
-
-  .actions
-    = f.submit 'Save'
+- unless form.object.business.single_location?
+  = form.association :locations
+= form.input :title
+= form.input :description
+= form.input :fine_print
+= form.input :value
+= form.input :discounted_value
+= form.input :starts_at
+= form.input :ends_at

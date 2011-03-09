@@ -1,5 +1,4 @@
-# Read about factories at http://github.com/thoughtbot/factory_girl
-
-Factory.define :business do |f|
-  f.title "MyString"
+Factory.define :business do |b|
+  b.title "Perfect Co"
+  b.locations {|locations| [locations.association(:location)]}
 end

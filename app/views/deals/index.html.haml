@@ -1,17 +1,4 @@
-%h1 Listing deals
+%h1 Deals
+%ul.list.deals
+  = list_for collection
 
-%table
-  %tr
-    %th
-    %th
-    %th
-
-  - @deals.each do |deal|
-    %tr
-      %td= link_to 'Show', deal
-      %td= link_to 'Edit', edit_deal_path(deal)
-      %td= link_to 'Destroy', deal, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Deal', new_deal_path

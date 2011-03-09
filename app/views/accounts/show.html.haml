@@ -1,0 +1,7 @@
+%h1= resource.full_name
+%p= resource.email
+- if resource.business
+  %p Business name: #{resource.business.title}
+.buttons
+  = link_to 'Edit Account', edit_account_path, :class => 'blue-button'
+  = link_to "Change Password", password_account_path, :class => 'blue-button'

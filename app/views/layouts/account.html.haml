@@ -1,0 +1,9 @@
+= inside_layout do
+  .container
+    %ul.account_menu
+      %li= link_to 'Listed Deals', representative_deals_path, :class => ("current" if ['representative/deals'].include?(controller_path))
+      %li= link_to 'Business', representative_business_path, :class => ("current" if ['representative/locations', 'representative/businesses'].include?(controller_path))
+      %li.right= link_to 'Account', account_path, :class => ("current" if ['accounts'].include?(controller_path))
+      %li.right= link_to 'My Deals', customer_deals_path, :class => ("current" if ['customer/deals'].include?(controller_path))
+  .container
+    = yield

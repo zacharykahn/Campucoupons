@@ -2,12 +2,23 @@
 %html{html_attrs('en-US')}
   = render :partial => 'layouts/head'
   %body{ :class => page_class }
-    = render :partial => 'layouts/flashes'
-    #container
-      %header#header
-      #content
-        = yield
-      %footer#footer
-        = render :partial => 'layouts/footer'
+    #root
+      = render :partial => 'layouts/flashes'
+      #header
+        .logo= link_to "campuscoupons", root_path
+        .city{ 'data-id' => current_city.id }= link_to current_city.title, cities_path
+        %ul.menu.account
+          - unless user_signed_in?
+            %li= link_to 'sign in', new_user_session_path
+            %li= link_to 'sign up', new_user_registration_path
+          - if user_signed_in?
+            %li= link_to 'account', account_path
+            %li= link_to 'sign out', destroy_user_session_path, :confirm => "Are you sure you want to sign out?"
+      #container
+        #content
+          = yield
+      #root_footer
+    #footer
+      = render :partial => 'layouts/footer'
     = include_javascripts :workspace
-    
+

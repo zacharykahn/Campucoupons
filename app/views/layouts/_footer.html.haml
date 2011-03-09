@@ -1,2 +1,7 @@
+%ul.menu
+  - unless current_user && current_user.business
+    %li= link_to "business owner?",  new_business_path
+  %li= link_to "terms"
+  %li= link_to "privacy policy"
 %small.copyright
-  Copyright &copy; #{Date.today.year}
+  Copyright &copy; #{Date.today.year} Campuscoupons

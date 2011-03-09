@@ -1,0 +1,2 @@
+module Representative::BusinessesHelper
+end

@@ -1,0 +1,6 @@
+%h1 Edit Account
+- simple_form_for(resource, :url => account_path) do |f|
+    = error_messages!
+    = f.input :email
+    = f.input :full_name
+    = f.submit "Save"

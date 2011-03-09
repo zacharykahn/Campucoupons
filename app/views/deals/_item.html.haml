@@ -1,0 +1,11 @@
+= content_tag_for(:li, item, :class => 'item') do
+  .image= image_tag "placeholders/thumbnail_140_140.png"
+  .details
+    %header= item.title
+    .description= truncate(item.description)
+    .discounted_value Value: #{item.discounted_value} $
+    .savings You save #{item.savings} %
+    .coupons Purchased #{item.coupons.count} times
+    .expires_in Expires in #{format_time_interval(item.expires_in)}
+  %ul.menu
+    %li= link_to "Purchase", edit_representative_deal_path(item), :class => 'blue-button'

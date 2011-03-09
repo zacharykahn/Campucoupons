@@ -1,0 +1,4 @@
+%h1 New deal
+= simple_form_for resource, :url => representative_deals_path do |form|
+  = render :partial => 'deals/form', :object => form
+  = form.submit 'Done'

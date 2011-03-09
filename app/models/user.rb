@@ -4,9 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  validates :full_name, :presence => true
+  attr_accessible :full_name, :email, :password, :password_confirmation, :remember_me
 
-  has_many :coupons
+  has_many :coupons, :foreign_key => :buyer_id
   has_many :deals, :through => :coupons
-  has_one :business
+  has_one :business, :foreign_key => :representative_id
 end

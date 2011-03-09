@@ -1,0 +1,16 @@
+.left-column
+  %h1= resource.title
+  .buttons
+    = link_to 'Edit Details', edit_representative_business_path, :class => 'blue-button'
+  %h2 Recent Deals
+  %ul.list.deals
+    = list_for resource.deals.limit(3), :partial => 'representative/deals/item'
+  %p= link_to "Show all", representative_deals_path
+  .buttons
+    = link_to 'New Deal', new_representative_deal_path, :class => 'blue-button'
+.right-column
+  %h2 Locations
+  %ul.list.locations
+    = list_for resource.locations, :partial => 'locations/item'
+  .buttons
+    = link_to 'Add Location', new_representative_business_location_path, :class => 'blue-button'
